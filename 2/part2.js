@@ -2,7 +2,7 @@ const fs = require("fs");
 const data = fs.readFileSync("2/input.txt", "utf-8").split("\n");
 
 let hor = 0;
-let pitch = 0;
+let depth = 0;
 let aim = 0;
 
 for (let i = 0; i < data.length; i++) {
@@ -13,7 +13,7 @@ for (let i = 0; i < data.length; i++) {
     switch (dir) {
         case "forward":
             hor += units;
-            pitch += units * aim;
+            depth += units * aim;
             break;
         case "up":
             aim -= units;
@@ -24,4 +24,4 @@ for (let i = 0; i < data.length; i++) {
     }
 }
 
-console.log("Result: ", hor * pitch)
+console.log("Result: ", hor * depth)
